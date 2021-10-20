@@ -13,7 +13,7 @@ fonts](https://github.com/ryanoasis/nerd-fonts)补丁。
 MacOS 用户可以直接通过cask安装：
 ``` sh
 brew tap laishulu/cask-fonts
-brew cask install font-sarasa-nerd
+brew install --cask font-sarasa-nerd
 ```
 
 ## 使用
