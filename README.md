@@ -33,6 +33,8 @@ brew install --cask font-sarasa-nerd
   问题。
 - 本项目对字体在`Chinese (PRC)`和`English (US)`下的`Family`, `SubFamily`和
   `UniqueID`等多个属性进行了设置，避免了很多问题。
+- 本项目将 `OS/2` 表中的 `xAvgCharWidth` 属性进行了设置，避免了windows系统下不支持
+  新版本 `OS/2` 表的软件中字距不正常的问题。 
 
 ## 基于其它 Sarasa 字体
 
