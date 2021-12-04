@@ -21,10 +21,12 @@ fix () {
   original_x_avg_char_width="$(grep xAvgCharWidth "$original_font.ttx" | cut -d '"' -f 2)"
   echo original xAvgCharWidth is $original_x_avg_char_width
 
-  sed -i ".bak" "s/xAvgCharWidth value=\"[0-9]\+\"/xAvgCharWidth value=\"${original_x_avg_char_width}\"/g" \
+  sed -i "" -E "s/xAvgCharWidth value=\"[0-9]+\"/xAvgCharWidth value=\"${original_x_avg_char_width}\"/g" \
     "$patched_font.ttx"
 
   ttx -o ${patched_font/.ttf/.after.ttf} -m $patched_font "$patched_font.ttx"
+	rm $patched_font
+	mv ${patched_font/.ttf/.after.ttf} $patched_font
 }
 
 fix ./sarasa/sarasa-mono-sc-bold.ttf             ./sarasa/sarasa-mono-sc-nerd-bold.ttf
@@ -38,5 +40,6 @@ fix ./sarasa/sarasa-mono-sc-regular.ttf          ./sarasa/sarasa-mono-sc-nerd-re
 fix ./sarasa/sarasa-mono-sc-semibold.ttf         ./sarasa/sarasa-mono-sc-nerd-semibold.ttf
 fix ./sarasa/sarasa-mono-sc-semibolditalic.ttf   ./sarasa/sarasa-mono-sc-nerd-semibolditalic.ttf
 
-rm -rf ./sarasa/*.ttx ./sarasa/*.bak ./sarasa/*.after.ttf
+rm -rf ./sarasa/*.ttx ./sarasa/*.bak
+
 
