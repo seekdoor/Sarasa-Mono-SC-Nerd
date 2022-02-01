@@ -16,6 +16,11 @@ brew tap laishulu/cask-fonts
 brew install --cask font-sarasa-nerd
 ```
 
+ArchLinux 用户可以使用yay安装：
+```sh
+yay -S nerd-fonts-sarasa-mono
+```
+
 ## 使用
 在你的主题配置文件中，使用 `Sarasa Mono SC Nerd`。
 
