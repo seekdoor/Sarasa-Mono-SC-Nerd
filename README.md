@@ -21,6 +21,13 @@ ArchLinux 用户可以使用yay安装：
 yay -S nerd-fonts-sarasa-mono
 ```
 
+Gentoo 用户可以添加`gentoo-zh`安装：
+```sh
+sudo eselect repository enable gentoo-zh
+sudo emerge --sync
+sudo emerge -av media-fonts/sarasa-mono-sc-nerd
+```
+
 ## 使用
 在你的主题配置文件中，使用 `Sarasa Mono SC Nerd`。
 
