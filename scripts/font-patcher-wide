@@ -955,21 +955,6 @@ class font_patcher:
                 self.sourceFont.hhea_ascent += 1
                 self.sourceFont.os2_typoascent += 1
                 self.sourceFont.os2_winascent += 1
-            # FOR SARASA
-            else:
-                # original: 965
-                self.sourceFont.hhea_ascent = 870
-                # original: 965
-                self.sourceFont.os2_winascent = 870
-                # original: 965
-                self.sourceFont.os2_typoascent = 870
-                # original: -285
-                self.sourceFont.hhea_descent = -279
-                # original: 285
-                self.sourceFont.os2_windescent = 279
-                # original: -285
-                self.sourceFont.os2_typodescent = -279
-
 
     def add_glyphrefs_to_essential(self, unicode):
         self.essential.add(unicode)
@@ -1042,7 +1027,8 @@ class font_patcher:
 
         # print("FINI hhea {} typo {} win {} use {}     {}      {}".format(hhea_btb, typo_btb, win_btb, use_typo, our_btb != hhea_btb, self.sourceFont.fontname))
 
-        self.font_dim = {'xmin': 0, 'ymin': 0, 'xmax': 0, 'ymax': 0, 'width' : 0, 'height': 0}
+        self.font_dim = {'xmin': 0, 'ymin': 0, 'xmax': 0, 'ymax': 0, 'width' : 0, 'height': 0, 'em': 0}
+        self.font_dim['em'] = self.sourceFont.em
 
         if metrics == 0:
             self.font_dim['ymin'] = self.sourceFont.hhea_descent + half_gap(self.sourceFont.hhea_linegap, False)
@@ -1130,7 +1116,8 @@ class font_patcher:
 
         # font_dim['height'] represents total line height, keep our symbols sized based upon font's em
         # Use the font_dim['height'] only for explicit 'y' scaling (not 'pa')
-        target_height = self.font_dim['height']
+        # FOR SARASA: https://github.com/laishulu/Sarasa-Mono-SC-Nerd/issues/1#issuecomment-663814468
+        target_height = self.font_dim['em']
         scale_ratio_y = target_height / sym_dim['height']
 
         if stretch == 'pa':
