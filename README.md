@@ -8,7 +8,7 @@ fonts](https://github.com/ryanoasis/nerd-fonts)字体补丁程序，然后用该
 fonts`合并入`Sarasa Mono SC`, 再经过一些后处理，而最后形成的字体。该字体特别适合
 **简体中文**用户在**终端**或者**代码编辑器**中使用。
 
-当前版本基础：
+上游版本：
 
 - Sarasa Mono SC：0.40.1
 - Nerd Font: 2.3.3
