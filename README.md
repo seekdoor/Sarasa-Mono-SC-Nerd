@@ -23,7 +23,7 @@ fonts`合并入`Sarasa Mono SC`, 再经过一些后处理，而最后形成的�
 - 图标效果：Wide Nerd 字体
   ![图标效果](screenshots/wide-nerd.png)
 - 对齐效果：终端里 emacs/org-mode 中的表格对齐
-  ![图标效果](screenshots/align.png)
+  ![对齐效果](screenshots/align.png)
 
 ## 特性
 
@@ -86,4 +86,4 @@ sudo emerge -av media-fonts/sarasa-mono-sc-nerd
    pipenv install argparse fonttools
    ```
 5. 建立 `sarasa` 目录，并将原始`Sarasa Mono SC`字体文件放入该目录中。
-6. 运行脚本 `./build`
+6. 运行脚本 `./build`，字体将生成到 `sarasa-nerd`目录下。
