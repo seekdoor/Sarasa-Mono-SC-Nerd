@@ -38,7 +38,7 @@ for item in ../"$sarasa_dir"/*; do
       echo "*********************************"
       echo "generating double width nerd font"
       echo "*********************************"
-      ../font-patcher-wide -l -c --careful "$item"
+      ../font-patcher-wide -l -c --careful --wide-nerd "$item"
       fix $item $(ls -t | head -1)
     fi
   fi

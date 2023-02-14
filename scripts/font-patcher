@@ -11,9 +11,8 @@ script_version = "3.5.4"
 version = "2.3.3"
 # FOR SARASA
 is_wide = False
-# is_wide = True
 subFamily = ""
-projectName = "Wide Nerds" if is_wide else "Nerds"
+projectName = "Nerds"
 projectNameAbbreviation = "NF"
 projectNameSingular = projectName[:-1]
 
@@ -1861,4 +1860,10 @@ def build_hdmx(filename):
 
 if __name__ == "__main__":
     __dir__ = os.path.dirname(os.path.abspath(__file__))
+    # FOR SARASA
+    WIDE_NERD_ARG = "--wide-nerd"
+    if WIDE_NERD_ARG in sys.argv:
+        is_wide = True
+        projectName = "Wide Nerds"
+        sys.argv = [x for x in sys.argv if x != WIDE_NERD_ARG]
     main()
