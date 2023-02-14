@@ -1,5 +1,5 @@
 diff --git a/font-patcher b/font-patcher
-index 534ddcb75..64e7d242a 100755
+index 534ddcb75..5235be2ab 100755
 --- a/font-patcher
 +++ b/font-patcher
 @@ -9,7 +9,10 @@ from __future__ import absolute_import, print_function, unicode_literals
@@ -197,7 +197,7 @@ index 534ddcb75..64e7d242a 100755
          scale_ratio_y = target_height / sym_dim['height']
  
          if stretch == 'pa':
-@@ -1786,7 +1812,58 @@ def main():
+@@ -1786,7 +1812,59 @@ def main():
      for f in sourceFonts:
          f.close()
  
@@ -254,5 +254,6 @@ index 534ddcb75..64e7d242a 100755
 +    if WIDE_NERD_ARG in sys.argv:
 +        is_wide = True
 +        projectName = "Wide Nerds"
++        projectNameSingular = projectName[:-1]
 +        sys.argv = [x for x in sys.argv if x != WIDE_NERD_ARG]
      main()
